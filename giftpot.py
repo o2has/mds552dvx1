@@ -66,5 +66,8 @@ async def handle_forwarded(event):
 async def confirm_receipt_handler(event):
     await event.respond("🎉 **Спасибо! Ваше получение подарка подтверждено!**")
 
-print("🤖 Бот запущен и ждёт пересланных сообщений...")
-client.run_until_disconnected()
+if __name__ == '__main__':
+    keep_alive()
+    print("🤖 Бот запущен и ждёт пересланных сообщений...")
+    client.run_until_disconnected()
+    
