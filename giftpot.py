@@ -1,5 +1,4 @@
 from telethon import TelegramClient, events, Button
-from telethon.tl.functions.messages import GetMessageReactionsListRequest
 from telethon.utils import get_display_name
 from html import escape
 import re
