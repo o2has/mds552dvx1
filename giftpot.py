@@ -3,12 +3,16 @@ from telethon.tl.functions.messages import GetMessageReactionsListRequest
 from telethon.utils import get_display_name
 from html import escape
 import re
+from dotenv import load_dotenv
+import os
 
-# 👉 Вставь свой бот-токен
-BOT_TOKEN = "7750701657:AAEA1fcXNS4B1EtTh8OeB6-83aLkuubZ5LE"
-api_id = 22065196
-api_hash = "035da06d12ecf7f788dc59b5af91fac0"
-client = TelegramClient("bot_session", api_id, api_hash).start(bot_token=BOT_TOKEN)
+load_dotenv()
+
+BOT_TOKEN = os.getenv('BOT_TOKEN')
+API_ID = int(os.getenv('API_ID'))
+API_HASH = os.getenv('API_HASH')
+
+client = TelegramClient('bot', API_ID, API_HASH).start(bot_token=BOT_TOKEN)
 
 def transform_text(text):
     text = text.replace("⚠️", "✅", 1)
