@@ -4,6 +4,7 @@ from html import escape
 import re
 from dotenv import load_dotenv
 import os
+from keep_alive import keep_alive
 
 load_dotenv()
 
