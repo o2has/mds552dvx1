@@ -15,7 +15,6 @@ API_HASH = os.getenv('API_HASH')
 client = TelegramClient('bot', API_ID, API_HASH).start(bot_token=BOT_TOKEN)
 
 def transform_text(text):
-    text = text.replace("⚠️", "✅", 1)
     text = re.sub(r'`ОЖИДАЕТ ОПЛАТЫ`', '`ОПЛАЧЕНО`', text, count=1)
     text = re.sub(
         r'⚠️ \*\*В статусе \*\*`ОЖИДАЕТ ОПЛАТЫ`.*',
